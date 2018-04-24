@@ -25,7 +25,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'raven.contrib.django.raven_compat',
     'census',
 )
 
@@ -110,9 +109,3 @@ MANAGERS = ADMINS
 API_URL = 'http://cr-api.ridejline.com'
 
 MAPBOX_TOKEN='pk.eyJ1IjoiamxpbmUiLCJhIjoiY2pnY3hpYWdkMzU3OTJ5bXl6djh3cm4wMiJ9.VbIbnzZyN_Wm5oY8tqcZNA'
-
-#import raven
-#RAVEN_CONFIG = {
-#    'dsn': os.environ.get("SENTRY_DSN"),
-#    'release': raven.fetch_git_sha(os.path.dirname(__file__) + '/../../..'),
-#}
