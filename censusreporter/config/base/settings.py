@@ -103,17 +103,16 @@ LOGGING = {
 }
 
 ADMINS = (
-    ('Ian Dees', 'ian.dees@gmail.com'),
-    ('Joe Germuska', 'joegermuska@gmail.com'),
-    ('Ryan Pitts', 'ryan.a.pitts@gmail.com'),
+    ('Peter Lau', 'peterlau@ridejline.com'),
 )
 MANAGERS = ADMINS
 
-API_URL = 'https://api.censusreporter.org'
+API_URL = 'http://cr-api.ridejline.com'
 
-import raven
+MAPBOX_TOKEN='pk.eyJ1IjoiamxpbmUiLCJhIjoiY2pnY3hpYWdkMzU3OTJ5bXl6djh3cm4wMiJ9.VbIbnzZyN_Wm5oY8tqcZNA'
 
-RAVEN_CONFIG = {
-    'dsn': os.environ.get("SENTRY_DSN"),
-    'release': raven.fetch_git_sha(os.path.dirname(__file__) + '/../../..'),
-}
+#import raven
+#RAVEN_CONFIG = {
+#    'dsn': os.environ.get("SENTRY_DSN"),
+#    'release': raven.fetch_git_sha(os.path.dirname(__file__) + '/../../..'),
+#}

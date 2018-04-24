@@ -716,7 +716,7 @@ class SearchResultsView(TemplateView):
         r = r_session.get(search_url.format(uniurlquote(query)))
         status_code = r.status_code
 
-        mapbox_accessToken = "pk.eyJ1IjoiY2Vuc3VzcmVwb3J0ZXIiLCJhIjoiQV9hS01rQSJ9.wtsn0FwmAdRV7cckopFKkA"
+        mapbox_accessToken = settings.MAPBOX_TOKEN
         location_request_url = "https://api.tiles.mapbox.com/v4/geocode/mapbox.places/{0}.json?access_token={1}&country=us,pr"
         location_request_url = location_request_url.format(uniurlquote(query), mapbox_accessToken)
         r_location = r_session.get(location_request_url)

@@ -7,9 +7,7 @@ WSGI_APPLICATION = "config.prod.wsgi.application"
 
 
 ALLOWED_HOSTS = [
-    '.censusreporter.org',
-    '.compute-1.amazonaws.com',  # allows viewing of instances directly
-    'cr-prod-409865157.us-east-1.elb.amazonaws.com',  # from the load balancer
+    'cr.ridejline.com'
 ]
 
 # From https://forums.aws.amazon.com/thread.jspa?messageID=423533:

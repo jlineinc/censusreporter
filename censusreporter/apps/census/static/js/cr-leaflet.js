@@ -35,8 +35,8 @@ CensusReporter = {
         initialize: function(geoid_spec, options) {
             L.GeoJSON.prototype.initialize.call(this);
             var options = L.extend({
-                api_url: 'https://api.censusreporter.org',
-                censusreporter_url: 'https://censusreporter.org',
+                api_url: 'http://cr-api.ridejline.com',
+                censusreporter_url: 'http://cr.ridejline.com',
                 release: 'tiger2016',
                 autoclick: true
             }, options);
@@ -348,6 +348,7 @@ CensusReporter.SummaryLevelLayer = CensusReporter.GeoJSONLayer.extend({
     _defaultOptions: {
         clipTiles: true,
         release: 'tiger2016',
+	api_url: 'http://cr-api.ridejline.com',
         unique: function(feature) {
             return feature.properties.geoid;
         }
@@ -383,8 +384,9 @@ CensusReporter.SummaryLevelLayer = CensusReporter.GeoJSONLayer.extend({
 
         options = L.Util.extend(this._defaultOptions, options);
         geojsonOptions = L.Util.extend(this._defaultGeojsonOptions, geojsonOptions);
-
-        var url = 'https://embed.censusreporter.org/1.0/geo/' + options.release + '/tiles/' + summary_level + '/{z}/{x}/{y}.geojson';
+	console.log(options)
+	
+        var url = options.api_url + '/1.0/geo/' + options.release + '/tiles/' + summary_level + '/{z}/{x}/{y}.geojson';
 
         if (!('style' in geojsonOptions)) {
             geojsonOptions.style = this._defaultFeatureStyle;
