@@ -10,6 +10,8 @@ ecdsa==0.13
 enum34==1.1.6
 fab==1.4.2
 first==2.0.1
+futures==3.2.0
+gunicorn==19.7.1
 idna==2.6
 ipaddress==1.0.22
 numpy==1.14.2
