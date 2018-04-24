@@ -348,7 +348,7 @@ CensusReporter.SummaryLevelLayer = CensusReporter.GeoJSONLayer.extend({
     _defaultOptions: {
         clipTiles: true,
         release: 'tiger2016',
-	api_url: 'http://cr-api.ridejline.com',
+	    api_url: 'http://cr-api.ridejline.com',
         unique: function(feature) {
             return feature.properties.geoid;
         }
@@ -364,7 +364,7 @@ CensusReporter.SummaryLevelLayer = CensusReporter.GeoJSONLayer.extend({
     _defaultGeojsonOptions: {
         onEachFeature: function(feature, layer) {
             // you can wire behavior to each "feature", or place outline.
-            var profileURL = 'https://censusreporter.org/profiles/' + feature.properties.geoid;
+            var profileURL = '/profiles/' + feature.properties.geoid;
             layer.bindPopup("<a href='" + profileURL + "'>" + feature.properties.name + "</a>");
             if (this.style && this.mouseoverStyle) {
                 layer.on('mouseover', function() {
@@ -384,7 +384,6 @@ CensusReporter.SummaryLevelLayer = CensusReporter.GeoJSONLayer.extend({
 
         options = L.Util.extend(this._defaultOptions, options);
         geojsonOptions = L.Util.extend(this._defaultGeojsonOptions, geojsonOptions);
-	console.log(options)
 	
         var url = options.api_url + '/1.0/geo/' + options.release + '/tiles/' + summary_level + '/{z}/{x}/{y}.geojson';
 

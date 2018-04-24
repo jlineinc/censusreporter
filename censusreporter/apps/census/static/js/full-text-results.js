@@ -1,7 +1,7 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiamxpbmUiLCJhIjoiY2pnY3hpYWdkMzU3OTJ5bXl6djh3cm4wMiJ9.VbIbnzZyN_Wm5oY8tqcZNA';
 const GEOCODE_URL = _("https://api.tiles.mapbox.com/v4/geocode/mapbox.places/<%=query%>.json?access_token=<%=token%>&country=us%2Cpr").template()
 const selected_url = _.template("/locate/?lat=<%=lat%>&lng=<%=lng%>&address=<%=address%>");
-var API_URL = typeof(CR_API_URL) != 'undefined' ? CR_API_URL : 'https://api.censusreporter.org';
+var API_URL = typeof(CR_API_URL) != 'undefined' ? CR_API_URL;
 const MIN_LENGTH = 3;
 
 function fulltextDataRequest(API_URL, request_term, profile, table, topic) {

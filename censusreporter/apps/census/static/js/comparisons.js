@@ -22,7 +22,7 @@ accept a `comparison` object.
 
 function Comparison(options, callback) {
 
-    var API_URL = typeof(CR_API_URL) != 'undefined' ? CR_API_URL : API_URL + 'https://api.censusreporter.org';
+    var API_URL = typeof(CR_API_URL) != 'undefined' ? CR_API_URL : API_URL;
 
     var comparison = {
         tableSearchAPI: API_URL + '/1.0/table/search',
@@ -136,7 +136,7 @@ function Comparison(options, callback) {
 
     // BEGIN THE MAP-SPECIFIC THINGS
     comparison.makeMapDisplay = function() {
-        var API_URL = typeof(CR_API_URL) != 'undefined' ? CR_API_URL : API_URL + 'https://api.censusreporter.org';
+        var API_URL = typeof(CR_API_URL) != 'undefined' ? CR_API_URL : API_URL;
 
         // some extra setup for map view
         // for triggering overflow-y: visible on table search
